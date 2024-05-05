@@ -74,6 +74,30 @@
                 }
             }
         },
+        "fastp_options": {
+            "title": "Fastp options",
+            "type": "object",
+            "description": "Parameters for running fastp",
+            "default": "",
+            "properties": {
+                "adapters": {
+                    "type": "string",
+                    "fa_icon": "fas fa-cut",
+                    "description": "Fasta file with adapter sequences to be trimmed."
+                },
+                "save_trimmed_fail": {
+                    "type": "boolean",
+                    "fa_icon": "far fa-save",
+                    "description": "Option to save trimmed reads."
+                },
+                "save_merged": {
+                    "type": "boolean",
+                    "fa_icon": "far fa-save",
+                    "description": "Option to save merged reads."
+                }
+            },
+            "fa_icon": "fas fa-cut"
+        },
         "institutional_config_options": {
             "title": "Institutional config options",
             "type": "object",
@@ -216,7 +240,7 @@
                 "hook_url": {
                     "type": "string",
                     "description": "Incoming hook URL for messaging service",
-                    "fa_icon": "fas fa-people-group",
+                    "fa_icon": "fas fa-broadcast-tower",
                     "help_text": "Incoming hook URL for messaging service. Currently, MS Teams and Slack are supported.",
                     "hidden": true
                 },
@@ -277,6 +301,9 @@
             "$ref": "#/definitions/reference_genome_options"
         },
         {
+            "$ref": "#/definitions/fastp_options"
+        },
+        {
             "$ref": "#/definitions/institutional_config_options"
         },
         {
@@ -285,16 +312,5 @@
         {
             "$ref": "#/definitions/generic_options"
         }
-    ],
-    "properties": {
-        "adapters": {
-            "type": "string"
-        },
-        "save_trimmed_fail": {
-            "type": "boolean"
-        },
-        "save_merged": {
-            "type": "boolean"
-        }
-    }
+    ]
 }

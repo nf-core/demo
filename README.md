@@ -21,7 +21,7 @@
 
 **nf-core/demo** is a simple nf-core style bioinformatics pipeline for workshops and demonstrations. It was created using the nf-core template and is designed to run quickly using small test data files.
 
-![nf-core/demo metro map](docs/images/nf-core-demo_subway.png)
+![nf-core/demo metro map](docs/images/nf-core-demo-subway.png)
 
 1. Read QC ([`FASTQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
 2. Adapter and quality trimming ([`FASTP`](https://github.com/OpenGene/fastp))

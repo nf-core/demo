@@ -44,6 +44,7 @@ workflow DEMO {
         SEQTK_TRIM (
             ch_samplesheet
         )
+        ch_trimmed  = SEQTK_TRIM.out.reads
         ch_versions = ch_versions.mix(SEQTK_TRIM.out.versions.first())
     }
 

@@ -5,7 +5,7 @@
 */
 
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
-include { FQ_LINT                } from '../modules/nf-core/fq/lint/main'
+include { SEQTK_TRIM             } from '../modules/nf-core/seqtk/trim/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
 include { paramsSummaryMap       } from 'plugin/nf-validation'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -40,10 +40,10 @@ workflow DEMO {
     //
     // MODULE: Run FQ_LINT
     //
-    FQ_LINT (
+    SEQTK_TRIM (
         ch_samplesheet
     )
-    ch_versions = ch_versions.mix(FQ_LINT.out.versions.first())
+    ch_versions = ch_versions.mix(SEQTK_TRIM.out.versions.first())
 
     //
     // Collate and save software versions

@@ -24,7 +24,7 @@
 ![nf-core/demo metro map](docs/images/nf-core-demo-subway.png)
 
 1. Read QC ([`FASTQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Adapter and quality trimming ([`FASTP`](https://github.com/OpenGene/fastp))
+2. Adapter and quality trimming ([`SEQTK_TRIM`](https://github.com/lh3/seqtk))
 3. Present QC for raw reads ([`MULTIQC`](http://multiqc.info/))
 
 ## Usage

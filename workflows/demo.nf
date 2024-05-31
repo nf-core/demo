@@ -5,7 +5,7 @@
 */
 
 include { FASTQC                 } from '../modules/nf-core/fastqc/main'
-include { FASTP                  } from '../modules/nf-core/fastp/main'
+include { FQ_LINT                } from '../modules/nf-core/fq/lint/main'
 include { MULTIQC                } from '../modules/nf-core/multiqc/main'
 include { paramsSummaryMap       } from 'plugin/nf-validation'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
@@ -29,7 +29,7 @@ workflow DEMO {
     ch_multiqc_files = Channel.empty()
 
     //
-    // MODULE: Run FastQC
+    // MODULE: Run FASTQC
     //
     FASTQC (
         ch_samplesheet
@@ -38,18 +38,12 @@ workflow DEMO {
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
     //
-    // MODULE: Run Fastp
+    // MODULE: Run FQ_LINT
     //
-    ch_adapters = params.adapters ? params.adapters : []
-
-    FASTP (
-        ch_samplesheet,
-        ch_adapters,
-        params.save_trimmed_fail,
-        params.save_merged
+    FQ_LINT (
+        ch_samplesheet
     )
-    ch_multiqc_files = ch_multiqc_files.mix(FASTP.out.json.collect{it[1]}.ifEmpty([]))
-    ch_versions      = ch_versions.mix(FASTP.out.versions.first())
+    ch_versions = ch_versions.mix(FQ_LINT.out.versions.first())
 
     //
     // Collate and save software versions
@@ -59,7 +53,7 @@ workflow DEMO {
         .set { ch_collated_versions }
 
     //
-    // MODULE: MultiQC
+    // MODULE: MULTIQC
     //
     ch_multiqc_config                     = Channel.fromPath("$projectDir/assets/multiqc_config.yml", checkIfExists: true)
     ch_multiqc_custom_config              = params.multiqc_config ? Channel.fromPath(params.multiqc_config, checkIfExists: true) : Channel.empty()

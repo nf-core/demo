@@ -14,7 +14,7 @@
 
   > Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
 
-- [fq](https://github.com/stjude-rust-labs/fq)
+- [seqtk](https://github.com/lh3/seqtk)
 
 - [MultiQC](https://pubmed.ncbi.nlm.nih.gov/27312411/)
 

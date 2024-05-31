@@ -74,30 +74,6 @@
                 }
             }
         },
-        "fastp_options": {
-            "title": "Fastp options",
-            "type": "object",
-            "description": "Parameters for running fastp",
-            "default": "",
-            "properties": {
-                "adapters": {
-                    "type": "string",
-                    "fa_icon": "fas fa-cut",
-                    "description": "Fasta file with adapter sequences to be trimmed."
-                },
-                "save_trimmed_fail": {
-                    "type": "boolean",
-                    "fa_icon": "far fa-save",
-                    "description": "Option to save trimmed reads."
-                },
-                "save_merged": {
-                    "type": "boolean",
-                    "fa_icon": "far fa-save",
-                    "description": "Option to save merged reads."
-                }
-            },
-            "fa_icon": "fas fa-cut"
-        },
         "institutional_config_options": {
             "title": "Institutional config options",
             "type": "object",
@@ -299,9 +275,6 @@
         },
         {
             "$ref": "#/definitions/reference_genome_options"
-        },
-        {
-            "$ref": "#/definitions/fastp_options"
         },
         {
             "$ref": "#/definitions/institutional_config_options"

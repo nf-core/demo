@@ -38,12 +38,14 @@ workflow DEMO {
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
     //
-    // MODULE: Run FQ_LINT
+    // MODULE: Run SEQTK_TRIM
     //
-    SEQTK_TRIM (
-        ch_samplesheet
-    )
-    ch_versions = ch_versions.mix(SEQTK_TRIM.out.versions.first())
+    if (!params.skip_trim) {
+        SEQTK_TRIM (
+            ch_samplesheet
+        )
+        ch_versions = ch_versions.mix(SEQTK_TRIM.out.versions.first())
+    }
 
     //
     // Collate and save software versions

@@ -74,6 +74,20 @@
                 }
             }
         },
+        "process_skipping_options": {
+            "title": "Process skipping options",
+            "type": "object",
+            "description": "Options to skip various steps within the workflow.",
+            "default": "",
+            "fa_icon": "fas fa-forward",
+            "properties": {
+                "skip_trim": {
+                    "type": "boolean",
+                    "description": "Skip trimming fastq files with seqtk",
+                    "fa_icon": "fas fa-chevron-circle-right"
+                }
+            }
+        },
         "institutional_config_options": {
             "title": "Institutional config options",
             "type": "object",
@@ -275,6 +289,9 @@
         },
         {
             "$ref": "#/definitions/reference_genome_options"
+        },
+        {
+            "$ref": "#/definitions/process_skipping_options"
         },
         {
             "$ref": "#/definitions/institutional_config_options"

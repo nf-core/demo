@@ -43,7 +43,7 @@ The FastQC plots displayed in the MultiQC report shows _untrimmed_ reads. They m
 <details markdown="1">
 <summary>Output files</summary>
 
-- `fastp/`
+- `fq/`
   - `*.fastq.gz`: Trimmed FASTQ files.
 
 </details>

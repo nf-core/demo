@@ -74,29 +74,19 @@
                 }
             }
         },
-        "fastp_options": {
-            "title": "Fastp options",
+        "process_skipping_options": {
+            "title": "Process skipping options",
             "type": "object",
-            "description": "Parameters for running fastp",
+            "description": "Options to skip various steps within the workflow.",
             "default": "",
+            "fa_icon": "fas fa-forward",
             "properties": {
-                "adapters": {
-                    "type": "string",
-                    "fa_icon": "fas fa-cut",
-                    "description": "Fasta file with adapter sequences to be trimmed."
-                },
-                "save_trimmed_fail": {
+                "skip_trim": {
                     "type": "boolean",
-                    "fa_icon": "far fa-save",
-                    "description": "Option to save trimmed reads."
-                },
-                "save_merged": {
-                    "type": "boolean",
-                    "fa_icon": "far fa-save",
-                    "description": "Option to save merged reads."
+                    "description": "Skip trimming fastq files with seqtk",
+                    "fa_icon": "fas fa-chevron-circle-right"
                 }
-            },
-            "fa_icon": "fas fa-cut"
+            }
         },
         "institutional_config_options": {
             "title": "Institutional config options",
@@ -308,7 +298,7 @@
             "$ref": "#/definitions/reference_genome_options"
         },
         {
-            "$ref": "#/definitions/fastp_options"
+            "$ref": "#/definitions/process_skipping_options"
         },
         {
             "$ref": "#/definitions/institutional_config_options"

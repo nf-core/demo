@@ -5,17 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.1
 
-### Added
-
 ### Changed
 
 [#7](https://github.com/nf-core/demo/pull/7) - Updated Usage and README docs
 
 ### Fixed
 
-[#7](https://github.com/nf-core/demo/pull/7) - Added full path for test config
-
-### Removed
+[#7](https://github.com/nf-core/demo/pull/7) - Fixed full path for `test.config`
 
 ### Dependencies
 
@@ -23,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 | ---------- | ----------- | ----------- |
 | `multiqc`  | 1.21        | 1.23        |
 
-## 1.0.0 2024-06-19
+## [1.0.0](https://github.com/nf-core/demo/releases/tag/1.0.0) 2024-06-19
 
 ### Credits
 
@@ -32,7 +28,7 @@ Special thanks to the following for their reviews and assistance:
 - [Maxime Garcia](https://github.com/maxulysse)
 - [Friederike Hanssen](https://github.com/FriederikeHanssen)
 
-### `Added`
+### Added
 
 - `nf-core/seqtk/trim` module
 - `skip_trim` parameter

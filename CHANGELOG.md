@@ -3,6 +3,26 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.1
+
+### Added
+
+### Changed
+
+[#7](https://github.com/nf-core/demo/pull/7) - Updated Usage and README docs
+
+### Fixed
+
+[#7](https://github.com/nf-core/demo/pull/7) - Added full path for test config
+
+### Removed
+
+### Dependencies
+
+| Dependency | Old version | New version |
+| ---------- | ----------- | ----------- |
+| `multiqc`  | 1.21        | 1.23        |
+
 ## 1.0.0 2024-06-19
 
 ### Credits

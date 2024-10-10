@@ -244,6 +244,9 @@
             "$ref": "#/$defs/reference_genome_options"
         },
         {
+            "$ref": "#/$defs/process_skipping_options"
+        },
+        {
             "$ref": "#/$defs/institutional_config_options"
         },
         {

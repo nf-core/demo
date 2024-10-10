@@ -44,13 +44,11 @@ jobs:
           nextflow run ${GITHUB_WORKSPACE} -profile test,docker --outdir ./results
 
       - name: Run pipeline with test data (singularity)
-        # TODO nf-core: You can customise CI pipeline run tests as required
         run: |
           nextflow run ${GITHUB_WORKSPACE} -profile test,singularity --outdir ./results
         if: "${{ github.base_ref == 'master' }}"
 
       - name: Run pipeline with test data (conda)
-        # TODO nf-core: You can customise CI pipeline run tests as required
         run: |
           nextflow run ${GITHUB_WORKSPACE} -profile test,conda --outdir ./results
         if: "${{ github.base_ref == 'master' }}"

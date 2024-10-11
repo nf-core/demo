@@ -14,6 +14,11 @@
                         "branch": "master",
                         "git_sha": "cf17ca47590cc578dfb47db1c2a44ef86f89976d",
                         "installed_by": ["modules"]
+                    },
+                    "seqtk/trim": {
+                        "branch": "master",
+                        "git_sha": "71c669747731cbc360dc220069c9f83015558c07",
+                        "installed_by": ["modules"]
                     }
                 }
             },

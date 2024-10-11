@@ -11,6 +11,8 @@ template:
   name: demo
   org: nf-core
   outdir: .
-  skip_features: null
-  version: 1.0.0
+  skip_features:
+    - fastqc
+    - igenomes
+  version: 1.0.2dev
 update: null

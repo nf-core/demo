@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Credits
 
+Special thanks to the following for their reviews and assistance:
+
 - [Chris Hakkaart](https://github.com/christopher-hakkaart)
+- [Marcel Ribeiro-Dantas](https://github.com/mribeirodantas)
 
 ### Changed
 

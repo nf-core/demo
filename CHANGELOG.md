@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-[#22](https://github.com/nf-core/demo/pull/23) - Update to latest seqtk and fastqc modules
+[#23](https://github.com/nf-core/demo/pull/23) - Update to latest seqtk and fastqc modules
 [#21](https://github.com/nf-core/demo/pull/21) - Template update for nf-core/tools v3.1.0
 
 ### Fixed

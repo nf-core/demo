@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Credits
 
+Special thanks to the following for their reviews and assistance:
+
+- [Chris Hakkaart](https://github.com/christopher-hakkaart)
+- [Marcel Ribeiro-Dantas](https://github.com/mribeirodantas)
+
 ### Changed
 
-### Fixed
-
-### Dependencies
+[#23](https://github.com/nf-core/demo/pull/23) - Update to latest `seqtk` and `fastqc` modules
+[#21](https://github.com/nf-core/demo/pull/21) - Template update for nf-core/tools v3.1.0
 
 ## [1.0.1](https://github.com/nf-core/demo/releases/tag/1.0.1) 2024-10-18
 

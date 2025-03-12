@@ -21,8 +21,8 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "creativeWorkStatus": "InProgress",
-            "datePublished": "2024-12-17T13:10:09+00:00",
+            "creativeWorkStatus": "Stable",
+            "datePublished": "2024-12-18T14:22:04+00:00",
             "description": "<h1>\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/images/nf-core-demo_logo_dark.png\">\n    <img alt=\"nf-core/demo\" src=\"docs/images/nf-core-demo_logo_light.png\">\n  </picture>\n</h1>\n\n[![GitHub Actions CI Status](https://github.com/nf-core/demo/actions/workflows/ci.yml/badge.svg)](https://github.com/nf-core/demo/actions/workflows/ci.yml)\n[![GitHub Actions Linting Status](https://github.com/nf-core/demo/actions/workflows/linting.yml/badge.svg)](https://github.com/nf-core/demo/actions/workflows/linting.yml)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/demo/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.12192442-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.12192442)\n[![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)\n\n[![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A524.04.2-23aa62.svg)](https://www.nextflow.io/)\n[![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)\n[![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)\n[![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)\n[![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/nf-core/demo)\n\n[![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23demo-4A154B?labelColor=000000&logo=slack)](https://nfcore.slack.com/channels/demo)[![Follow on Twitter](http://img.shields.io/badge/twitter-%40nf__core-1DA1F2?labelColor=000000&logo=twitter)](https://twitter.com/nf_core)[![Follow on Mastodon](https://img.shields.io/badge/mastodon-nf__core-6364ff?labelColor=FFFFFF&logo=mastodon)](https://mstdn.science/@nf_core)[![Watch on YouTube](http://img.shields.io/badge/youtube-nf--core-FF0000?labelColor=000000&logo=youtube)](https://www.youtube.com/c/nf-core)\n\n## Introduction\n\n**nf-core/demo** is a simple nf-core style bioinformatics pipeline for workshops and demonstrations. It was created using the nf-core template and is designed to run quickly using small test data files.\n\n![nf-core/demo metro map](docs/images/nf-core-demo-subway.png)\n\n1. Read QC ([`FASTQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))\n2. Adapter and quality trimming ([`SEQTK_TRIM`](https://github.com/lh3/seqtk))\n3. Present QC for raw reads ([`MULTIQC`](http://multiqc.info/))\n\n## Usage\n\n> [!NOTE]\n> If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.\n\nFirst, prepare a samplesheet with your input data that looks as follows:\n\n`samplesheet.csv`:\n\n```csv\nsample,fastq_1,fastq_2\nSAMPLE1_PE,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R1.fastq.gz,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R2.fastq.gz\nSAMPLE2_PE,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R1.fastq.gz,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R2.fastq.gz\nSAMPLE3_SE,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample1_R1.fastq.gz,\nSAMPLE3_SE,https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/illumina/amplicon/sample2_R1.fastq.gz,\n```\n\nEach row represents a fastq file (single-end) or a pair of fastq files (paired end).\n\nNow, you can run the pipeline using:\n\n```bash\nnextflow run nf-core/demo \\\n   -profile <docker/singularity/.../institute> \\\n   --input samplesheet.csv \\\n   --outdir <OUTDIR>\n```\n\n> [!WARNING]\n> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).\n\nFor more details and further functionality, please refer to the [usage documentation](https://nf-co.re/demo/usage) and the [parameter documentation](https://nf-co.re/demo/parameters).\n\n## Pipeline output\n\nTo see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/demo/results) tab on the nf-core website pipeline page.\nFor more details about the output files and reports, please refer to the\n[output documentation](https://nf-co.re/demo/output).\n\n## Credits\n\nnf-core/demo was originally written by Chris Hakkaart ([@christopher-hakkaart](https://github.com/christopher-hakkaart)).\n\n<!-- We thank the following people for their extensive assistance in the development of this pipeline: -->\n\n## Contributions and Support\n\nIf you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).\n\nFor further information or help, don't hesitate to get in touch on the [Slack `#demo` channel](https://nfcore.slack.com/channels/demo) (you can join with [this invite](https://nf-co.re/join/slack)).\n\n## Citations\n\nIf you use nf-core/demo for your analysis, please cite it using the following doi: [10.5281/zenodo.12192442](https://doi.org/10.5281/zenodo.12192442)\n\nAn extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.\n\nYou can cite the `nf-core` publication as follows:\n\n> **The nf-core framework for community-curated bioinformatics pipelines.**\n>\n> Philip Ewels, Alexander Peltzer, Sven Fillinger, Harshil Patel, Johannes Alneberg, Andreas Wilm, Maxime Ulysse Garcia, Paolo Di Tommaso & Sven Nahnsen.\n>\n> _Nat Biotechnol._ 2020 Feb 13. doi: [10.1038/s41587-020-0439-x](https://dx.doi.org/10.1038/s41587-020-0439-x).\n",
             "hasPart": [
                 {
@@ -99,7 +99,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#f16b62c8-d661-4d09-a65f-753bb2b5c931"
+                    "@id": "#b3830ab5-d773-4b9a-8326-367af3d61045"
                 }
             ],
             "name": "nf-core/demo"
@@ -128,7 +128,7 @@
                 }
             ],
             "dateCreated": "",
-            "dateModified": "2024-12-17T14:10:09Z",
+            "dateModified": "2024-12-18T15:22:04Z",
             "dct:conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
             "keywords": ["nf-core", "nextflow", "demo", "minimal-example", "training", "tutorial"],
             "license": ["MIT"],
@@ -139,8 +139,8 @@
             "sdPublisher": {
                 "@id": "https://nf-co.re/"
             },
-            "url": ["https://github.com/nf-core/demo", "https://nf-co.re/demo/dev/"],
-            "version": ["1.1.0dev"]
+            "url": ["https://github.com/nf-core/demo", "https://nf-co.re/demo/1.0.2/"],
+            "version": ["1.0.2"]
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
@@ -155,11 +155,11 @@
             "version": "!>=24.04.2"
         },
         {
-            "@id": "#f16b62c8-d661-4d09-a65f-753bb2b5c931",
+            "@id": "#b3830ab5-d773-4b9a-8326-367af3d61045",
             "@type": "TestSuite",
             "instance": [
                 {
-                    "@id": "#9d6f54bc-199d-41c5-93e3-cb09dcf7d1b3"
+                    "@id": "#f837dd2c-19e1-4db6-b55a-22020ef9d2ab"
                 }
             ],
             "mainEntity": {
@@ -168,7 +168,7 @@
             "name": "Test suite for nf-core/demo"
         },
         {
-            "@id": "#9d6f54bc-199d-41c5-93e3-cb09dcf7d1b3",
+            "@id": "#f837dd2c-19e1-4db6-b55a-22020ef9d2ab",
             "@type": "TestInstance",
             "name": "GitHub Actions workflow for testing nf-core/demo",
             "resource": "repos/nf-core/demo/actions/workflows/ci.yml",

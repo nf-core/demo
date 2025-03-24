@@ -122,6 +122,11 @@
         {
             "@id": "main.nf",
             "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+            "creator": [
+                {
+                    "@id": "https://orcid.org/0000-0002-5599-5565"
+                }
+            ],
             "dateCreated": "",
             "dateModified": "2025-01-27T14:45:52Z",
             "dct:conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
@@ -134,8 +139,8 @@
             "sdPublisher": {
                 "@id": "https://nf-co.re/"
             },
-            "url": ["https://github.com/nf-core/demo", "https://nf-co.re/demo/1.0.0/"],
-            "version": ["1.0.0"]
+            "url": ["https://github.com/nf-core/demo", "https://nf-co.re/demo/1.0.2/"],
+            "version": ["1.0.2"]
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow",
@@ -290,6 +295,12 @@
             "@type": "Organization",
             "name": "nf-core",
             "url": "https://nf-co.re/"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-5599-5565",
+            "@type": "Person",
+            "email": "mashehu3@gmail.com",
+            "name": "Matthias H\u00f6rtenhuber"
         }
     ]
 }

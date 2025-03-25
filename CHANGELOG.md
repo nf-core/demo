@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### `Changed`
 
-[#]() Updated the JSON schema to make input validation stricter, thus preventing more errors during the pipeline run.
+[#34](https://github.com/nf-core/demo/pull/34) Updated the JSON schema to make input validation stricter, thus preventing more errors during the pipeline run.
 
 ## 1.0.2
 

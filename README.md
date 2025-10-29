@@ -66,11 +66,13 @@ For more details and further functionality, please refer to the [usage documenta
 The pipeline includes automatic Slack notifications via the nf-slack plugin. To enable Slack notifications:
 
 1. Create a Slack incoming webhook in your workspace:
+
    - Go to your Slack workspace settings
    - Navigate to "Apps" → "Incoming Webhooks"
    - Create a new webhook and copy the URL
 
 2. Set the webhook URL as an environment variable:
+
    ```bash
    export SLACK_WEBHOOK_URL='https://hooks.slack.com/services/YOUR/WEBHOOK/URL'
    ```

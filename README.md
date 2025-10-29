@@ -61,6 +61,29 @@ nextflow run nf-core/demo \
 
 For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/demo/usage) and the [parameter documentation](https://nf-co.re/demo/parameters).
 
+## Slack Notifications
+
+The pipeline includes automatic Slack notifications via the nf-slack plugin. To enable Slack notifications:
+
+1. Create a Slack incoming webhook in your workspace:
+   - Go to your Slack workspace settings
+   - Navigate to "Apps" → "Incoming Webhooks"
+   - Create a new webhook and copy the URL
+
+2. Set the webhook URL as an environment variable:
+   ```bash
+   export SLACK_WEBHOOK_URL='https://hooks.slack.com/services/YOUR/WEBHOOK/URL'
+   ```
+
+3. Run your pipeline normally - notifications will be sent automatically:
+   - Pipeline start notification
+   - Pipeline completion notification (with task statistics)
+   - Pipeline failure notification (with error details)
+
+The plugin is configured to include command line details and resource usage statistics in the notifications. You can customize the notification settings in `nextflow.config` under the `slack` configuration block.
+
+For more information about the nf-slack plugin, visit the [nf-slack repository](https://github.com/seqeralabs/nf-slack).
+
 ## Pipeline output
 
 To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/demo/results) tab on the nf-core website pipeline page.

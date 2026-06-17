@@ -130,9 +130,20 @@
             "dateCreated": "",
             "dateModified": "2026-04-28T11:20:33Z",
             "dct:conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
-            "keywords": ["nf-core", "nextflow", "demo", "minimal-example", "training", "tutorial"],
-            "license": ["MIT"],
-            "name": ["nf-core/demo"],
+            "keywords": [
+                "nf-core",
+                "nextflow",
+                "demo",
+                "minimal-example",
+                "training",
+                "tutorial"
+            ],
+            "license": [
+                "MIT"
+            ],
+            "name": [
+                "nf-core/demo"
+            ],
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#nextflow"
             },

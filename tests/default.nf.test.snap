@@ -9,7 +9,7 @@
                     "seqtk": "1.4-r122"
                 },
                 "Workflow": {
-                    "nf-core/demo": "v1.1.0"
+                    "nf-core/demo": "v1.2.0dev"
                 }
             },
             [

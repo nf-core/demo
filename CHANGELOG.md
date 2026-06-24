@@ -17,7 +17,7 @@ Special thanks to the following for their reviews and assistance:
 | ---------- | ----------- | ----------- |
 |            |             |             |
 
-## 1.2.0 - [2026-06-26]
+## 1.2.0 - [2026-06-24]
 
 ### Credits
 

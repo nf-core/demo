@@ -8,4 +8,4 @@ template:
   name: demo
   org: nf-core
   outdir: .
-  version: 1.2.0
+  version: 1.2.1dev

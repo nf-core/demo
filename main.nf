@@ -15,7 +15,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { DEMO  } from './workflows/demo'
+include { DEMO                    } from './workflows/demo'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_demo_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_demo_pipeline'
 include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_demo_pipeline'
@@ -26,9 +26,6 @@ include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_demo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// TODO nf-core: Remove this line if you don't need a FASTA file
-//   This is an example of how to use getGenomeAttribute() to fetch parameters
-//   from igenomes.config using `--genome`
 params.fasta = getGenomeAttribute('fasta')
 
 /*
@@ -41,7 +38,6 @@ params.fasta = getGenomeAttribute('fasta')
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
 workflow NFCORE_DEMO {
-
     take:
     samplesheet // channel: samplesheet read in from --input
 
@@ -50,13 +46,14 @@ workflow NFCORE_DEMO {
     //
     // WORKFLOW: Run pipeline
     //
-    DEMO (
+    DEMO(
         samplesheet,
         params.multiqc_config,
         params.multiqc_logo,
         params.multiqc_methods_description,
         params.outdir,
     )
+
     emit:
     multiqc_report = DEMO.out.multiqc_report // channel: /path/to/multiqc_report.html
 }
@@ -67,12 +64,10 @@ workflow NFCORE_DEMO {
 */
 
 workflow {
-
-    main:
     //
     // SUBWORKFLOW: Run initialisation tasks
     //
-    PIPELINE_INITIALISATION (
+    PIPELINE_INITIALISATION(
         params.version,
         params.validate_params,
         params.monochrome_logs,
@@ -81,30 +76,24 @@ workflow {
         params.input,
         params.help,
         params.help_full,
-        params.show_hidden
+        params.show_hidden,
     )
 
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_DEMO (
+    NFCORE_DEMO(
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
     // SUBWORKFLOW: Run completion tasks
     //
-    PIPELINE_COMPLETION (
+    PIPELINE_COMPLETION(
         params.email,
         params.email_on_fail,
         params.plaintext_email,
         params.outdir,
         params.monochrome_logs,
-        NFCORE_DEMO.out.multiqc_report
+        NFCORE_DEMO.out.multiqc_report,
     )
 }
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    THE END
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/

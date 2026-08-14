@@ -6,11 +6,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## v1.2.1dev - [unreleased<!-- TODO nf-core: replace with date on release -->]
 
 Initial release of nf-core/demo, created with the [nf-core](https://nf-co.re/) template.
-
-### `Added`
-
-### `Fixed`
-
-### `Dependencies`
-
-### `Deprecated`

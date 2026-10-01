@@ -22,15 +22,14 @@ nextflow_workflow {
             workflow {
                 """
                 validate_params = false
-                input[0] = workflow
-                input[1] = validate_params
-                input[2] = ""
+                input[0] = validate_params
+                input[1] = ""
+                input[2] = false
                 input[3] = false
                 input[4] = false
-                input[5] = false
+                input[5] = ""
                 input[6] = ""
                 input[7] = ""
-                input[8] = ""
                 """
             }
         }
@@ -54,15 +53,14 @@ nextflow_workflow {
             workflow {
                 """
                 validate_params = true
-                input[0] = workflow
-                input[1] = validate_params
-                input[2] = ""
+                input[0] = validate_params
+                input[1] = ""
+                input[2] = false
                 input[3] = false
                 input[4] = false
-                input[5] = false
+                input[5] = ""
                 input[6] = ""
                 input[7] = ""
-                input[8] = ""
                 """
             }
         }
@@ -86,15 +84,14 @@ nextflow_workflow {
             workflow {
                 """
                 validate_params = false
-                input[0] = workflow
-                input[1] = validate_params
-                input[2] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
+                input[0] = validate_params
+                input[1] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
+                input[2] = false
                 input[3] = false
                 input[4] = false
-                input[5] = false
+                input[5] = ""
                 input[6] = ""
                 input[7] = ""
-                input[8] = ""
                 """
             }
         }
@@ -118,15 +115,14 @@ nextflow_workflow {
             workflow {
                 """
                 validate_params = true
-                input[0] = workflow
-                input[1] = validate_params
-                input[2] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
+                input[0] = validate_params
+                input[1] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
+                input[2] = false
                 input[3] = false
                 input[4] = false
-                input[5] = false
+                input[5] = ""
                 input[6] = ""
                 input[7] = ""
-                input[8] = ""
                 """
             }
         }
@@ -151,15 +147,14 @@ nextflow_workflow {
             workflow {
                 """
                 validate_params = true
-                input[0] = workflow
-                input[1] = validate_params
-                input[2] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
-                input[3] = true
+                input[0] = validate_params
+                input[1] = "${projectDir}/subworkflows/nf-core/utils_nfschema_plugin/tests/nextflow_schema.json"
+                input[2] = true
+                input[3] = false
                 input[4] = false
-                input[5] = false
-                input[6] = "Before"
-                input[7] = "After"
-                input[8] = "nextflow run test/test"
+                input[5] = "Before"
+                input[6] = "After"
+                input[7] = "nextflow run test/test"
                 """
             }
         }

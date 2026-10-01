@@ -9,7 +9,6 @@ include { paramsHelp         } from 'plugin/nf-schema'
 workflow UTILS_NFSCHEMA_PLUGIN {
 
     take:
-    input_workflow      // workflow: the workflow object used by nf-schema to get metadata from the workflow
     validate_params     // boolean:  validate the parameters
     parameters_schema   // string:   path to the parameters JSON schema.
                         //           this has to be the same as the schema given to `validation.parametersSchema`
@@ -38,7 +37,7 @@ workflow UTILS_NFSCHEMA_PLUGIN {
         }
         log.info paramsHelp(
             help_options,
-            (params.help instanceof String && params.help != "true") ? params.help : "",
+            parameter: (params.help instanceof String && params.help != "true") ? params.help : "",
         )
         exit 0
     }
@@ -53,7 +52,7 @@ workflow UTILS_NFSCHEMA_PLUGIN {
         summary_options << [parametersSchema: parameters_schema]
     }
     log.info before_text
-    log.info paramsSummaryLog(summary_options, input_workflow)
+    log.info paramsSummaryLog(summary_options)
     log.info after_text
 
     //

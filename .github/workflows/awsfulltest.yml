@@ -31,8 +31,20 @@ jobs:
           revision: ${{ steps.revision.outputs.revision }}
           workdir: s3://${{ vars.AWS_S3_BUCKET }}/work/demo/work-${{ steps.revision.outputs.revision }}
           nextflow_config: |
+            // Launch config replaces the pipeline plugin list.
             plugins {
+              id 'nf-schema@2.7.2'
               id 'nf-slack@0.5.0'
+              id 'nf-snapshot@0.1.0'
+            }
+            snapshot {
+              enabled  = true
+              file     = 'tests/snapshots/test_full.json'
+              ignore   = ['pipeline_info/**']
+              nameOnly = [
+                '**/*.html', '**/*.log', '**/*.pdf', '**/*.png', '**/*.svg', '**/*.parquet', '**/*.json',
+                'multiqc/multiqc_data/llms-full.txt', 'multiqc/multiqc_data/multiqc_sources.txt'
+              ]
             }
             slack {
               enabled = true

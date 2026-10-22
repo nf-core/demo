@@ -38,6 +38,9 @@
                     "@id": "modules/"
                 },
                 {
+                    "@id": "modules/local/"
+                },
+                {
                     "@id": "modules/nf-core/"
                 },
                 {
@@ -118,6 +121,17 @@
             "contributor": [
                 {
                     "@id": "https://orcid.org/0000-0001-5007-2684"
+                }
+            ],
+            "contributor": [
+                {
+                    "@id": "https://orcid.org/0000-0002-0978-6076"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-9751-7820"
+                },
+                {
+                    "@id": "https://orcid.org/0000-0001-5585-6277"
                 }
             ],
             "dateCreated": "",
@@ -238,6 +252,11 @@
             "description": "Modules used by the pipeline"
         },
         {
+            "@id": "modules/local/",
+            "@type": "Dataset",
+            "description": "Pipeline-specific modules"
+        },
+        {
             "@id": "modules/nf-core/",
             "@type": "Dataset",
             "description": "nf-core modules"
@@ -326,7 +345,34 @@
         {
             "@id": "https://orcid.org/0000-0001-5007-2684",
             "@type": "Person",
-            "name": "Christopher Hakkaart"
+            "affiliation": "Seqera",
+            "email": "chris.hakkaart@seqera.io",
+            "name": "Christopher Hakkaart",
+            "url": "https://github.com/christopher-hakkaart"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-0978-6076",
+            "@type": "Person",
+            "affiliation": "Seqera",
+            "email": "flowuenne@gmail.com",
+            "name": "Florian Wuennemann",
+            "url": "https://github.com/flowuenne"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9751-7820",
+            "@type": "Person",
+            "affiliation": "Seqera",
+            "email": "geraldine.vdauwera@seqera.io",
+            "name": "Geraldine Van der Auwera",
+            "url": "https://github.com/vdauwera"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-5585-6277",
+            "@type": "Person",
+            "affiliation": "Leibniz-HKI / MPI-EVA",
+            "email": "jfy133@gmail.com",
+            "name": "James A. Fellows Yates",
+            "url": "https://github.com/jfy133"
         }
     ]
 }
